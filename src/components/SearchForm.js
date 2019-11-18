@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function SearchForm() {
- 
+export default function SearchForm(props) {
   return (
-    <section className="search-form">
-     // Add a search form here
+    <section>
+      <form onSubmit={props.handleSubmit}>
+        <input
+          type="text"
+          name="search"
+          value={props.id}
+          onChange={props.handleChange}
+          placeholder="Character Name"
+        />
+
+        <div>{props.name}</div>
+
+        <button className="search-button">Search</button>
+      </form>
     </section>
   );
 }
